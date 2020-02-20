@@ -24,7 +24,7 @@ RUN conda config --append channels https://repo.anaconda.com/pkgs/free
 
 RUN conda config --append channels pkgs/pro
 
-RUN conda install -y \
+RUN conda install -y -c bioconda \
 python=2.7 \
 pysam=0.12.0.1 \
 numpy=1.10.2 \
