@@ -23,15 +23,18 @@ RUN apt-get update && apt-get install -y g++
 RUN conda install -y -c bioconda \
 python=2.7 \
 pysam=0.12.0.1 \
-numpy=1.10.2 \
-scipy=0.16.0 \
-matplotlib=1.5.1 \
 pybedtools=0.7.10 \
-scikit-learn=0.17.1 \
-HTSeq=0.9.1 \
-cython=0.28.2 \
-libgfortran=1
+HTSeq=0.9.1 \ 
+cython=0.28.2 \ 
 
+RUN conda config --append channels conda-forge
+
+RUN conda install -y -c bioconda \
+- scipy=0.16.0 \
+- scikit-learn=0.17.1 \
+- matplotlib=1.5.1 \
+- numpy=1.10.2 \
+- libgfortran=1 \
 
 RUN git clone git://github.com/YeoLab/clipper.git && \
     cd clipper && \
