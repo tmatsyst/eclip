@@ -20,6 +20,10 @@ MAINTAINER Brian Yee <brian.alan.yee@gmail.com>
 
 RUN apt-get update && apt-get install -y g++
 
+RUN conda config --append channels https://repo.anaconda.com/pkgs/free
+
+RUN conda config --append channels pkgs/pro
+
 RUN conda install -y -c bioconda \
 python=2.7 \
 pysam=0.12.0.1 \
